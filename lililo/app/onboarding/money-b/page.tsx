@@ -25,9 +25,10 @@ export default function MoneyBScreen() {
   }
 
   const handleContinue = () => {
-    const amt = money.saveMethod === 'Fixed amount monthly' ? { monthlySavings: savingsAmt }
-      : money.saveMethod === 'Lump sums when I can' ? { annualSavings: savingsAmt } : {}
-    update({ money: { ...money, ...amt } })
+    const updatedMoney: Record<string, string> = { ...money }
+    if (money.saveMethod === 'Fixed amount monthly') updatedMoney.monthlySavings = savingsAmt
+    if (money.saveMethod === 'Lump sums when I can') updatedMoney.annualSavings = savingsAmt
+    update({ money: updatedMoney })
     router.push('/onboarding/life-questions')
   }
 
