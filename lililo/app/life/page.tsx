@@ -80,8 +80,8 @@ export default function LifeScreen() {
         {[
           { title: 'AI tools that could save your business hours every week', tag: 'Your business', detail: 'You run things solo — there are tools that handle follow-up, scheduling and content in minutes. Worth knowing about before your competition does.' },
           { title: 'How to find where locals actually eat when you travel', tag: 'Travel + food', detail: 'Not TripAdvisor. Instagram geotags, local food blogs, asking at your accommodation. Worth knowing before Bali.' },
-          { title: 'Reading a wind forecast properly', tag: 'Your sport', detail: 'Windy, PredictWind, Windguru — 15 minutes understanding these changes how you plan every session and whether you\'re on the water when the conditions are actually right.' },
-        ].map((item, i, arr) => (
+          { title: 'Reading a wind forecast properly', tag: 'Your sport', detail: 'Windy, PredictWind, Windguru — 15 minutes understanding these changes how you plan every session and whether you\'re on the water when conditions are right.' },
+        ].map((item, i) => (
           <div key={i} style={{ display: 'flex', gap: 12, paddingTop: i === 0 ? 0 : 12, borderTop: i === 0 ? 'none' : '0.5px solid var(--warm-hairline)', marginTop: i === 0 ? 0 : 12 }}>
             <div style={{ width: 22, height: 22, borderRadius: '50%', background: '#F0E8DC', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 500, color: 'var(--warm-light)', flexShrink: 0, marginTop: 2 }}>{i + 1}</div>
             <div style={{ flex: 1 }}>
@@ -125,10 +125,14 @@ export default function LifeScreen() {
       {/* Ask */}
       <div style={{ margin: '18px 20px 0', background: 'var(--white)', borderRadius: 'var(--r-md)', border: '0.5px solid var(--warm-hairline)', padding: 18, boxShadow: 'var(--shadow-card)' }}>
         <p style={{ fontSize: 14, fontWeight: 500, color: 'var(--charcoal)', marginBottom: 4 }}>Something on your mind?</p>
-        <p style={{ fontSize: 12, fontWeight: 300, color: 'var(--warm-light)', marginBottom: 12, lineHeight: 1.5 }}>Ask anything about your relationships, enjoyment, or sense of purpose. There are no right answers here — just honest ones.</p>
-        <div style={{ background: '#F7F3ED', border: '0.5px solid rgba(44,35,24,0.15)', borderRadius: 10, padding: '12px 14px', fontSize: 14, color: 'var(--warm-light)', fontWeight: 300 }}>e.g. How do I find new people to connect with at this stage of life?</div>
+        <p style={{ fontSize: 12, fontWeight: 300, color: 'var(--warm-light)', marginBottom: 12, lineHeight: 1.5 }}>
+          Ask anything about your relationships, enjoyment, or sense of purpose. There are no right answers here — just honest ones.
+        </p>
+        <div style={{ background: '#F7F3ED', border: '0.5px solid rgba(44,35,24,0.15)', borderRadius: 10, padding: '12px 14px', fontSize: 14, color: 'var(--warm-light)', fontWeight: 300 }}>
+          e.g. How do I find new people to connect with at this stage of life?
+        </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 10 }}>
-          {['How do I stop feeling guilty about prioritising myself?', 'What if I don\'t know what my purpose is?', 'Is it normal to feel like this at my age?'].map(c => (
+          {['How do I stop feeling guilty about prioritising myself?', "What if I don't know what my purpose is?", 'Is it normal to feel like this at my age?'].map(c => (
             <span key={c} style={{ background: '#F7F3ED', border: '0.5px solid rgba(44,35,24,0.12)', borderRadius: 20, padding: '7px 13px', fontSize: 12, color: 'var(--warm-mid)', fontWeight: 300 }}>{c}</span>
           ))}
         </div>
